@@ -5,7 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 /**
  * <p>
- * <b>Classe</b> che permette l'avvio dell'applicazione Spring Boot
+ * <b>Classe</b> che permette l'avvio (o anche chiamato "bootstrap") dell'applicazione Spring Boot
  * </p>
  * 
  * @author Cekerri Regy
