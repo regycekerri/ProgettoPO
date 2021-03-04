@@ -4,6 +4,7 @@ package com.progettoPO.OPENWEATHERAPP.exception;
  * <p>
  * <b>Classe</b> che descrive l'eccezione sollevata quando viene fatta una richiesta di creazione 
  * dello storico di uno stato che già lo possiede
+ * </p>
  * 
  * @author Cekerri Regy
  * @author Vigliotta Michele

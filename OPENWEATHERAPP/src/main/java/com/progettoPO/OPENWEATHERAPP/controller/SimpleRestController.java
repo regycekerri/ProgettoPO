@@ -92,7 +92,7 @@ public class SimpleRestController {
 	 * @throws CountryNotSupportedException se lo stato non è supportato
 	 * @throws AlreadyExistingHistoryException se esiste già l'archivio per lo stato
 	 */
-	@RequestMapping(value="/history", method = RequestMethod.POST)
+	@RequestMapping(value="/history/create", method = RequestMethod.POST)
 	public ResponseEntity<Object> createHistory(@RequestBody String country) throws CountryNotSupportedException, AlreadyExistingHistoryException{
 		try {
 			if(list.countrySupported(country)) {
@@ -116,6 +116,5 @@ public class SimpleRestController {
 			
 		}
 	}
-	
 	
 }
