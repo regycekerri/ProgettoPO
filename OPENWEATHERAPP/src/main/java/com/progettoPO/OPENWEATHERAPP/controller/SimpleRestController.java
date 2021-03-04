@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.progettoPO.OPENWEATHERAPP.exception.AlreadyExistingHistoryException;
 import com.progettoPO.OPENWEATHERAPP.exception.CountryNotSupportedException;
+import com.progettoPO.OPENWEATHERAPP.exception.NotExistingHistoryException;
 import com.progettoPO.OPENWEATHERAPP.service.History;
 import com.progettoPO.OPENWEATHERAPP.service.ListOfCountries;
 import com.progettoPO.OPENWEATHERAPP.service.WeatherServiceImpl;
@@ -114,6 +115,28 @@ public class SimpleRestController {
 		}catch (AlreadyExistingHistoryException a) {
 			return new ResponseEntity<>(a.getMsg(), HttpStatus.BAD_REQUEST);
 			
+		}
+	}
+	
+	/**
+	 * La seguente rotta permette all'utente di cancellare l'archivio storico di uno degli stati per 
+	 * il quale lo si possieda
+	 * 
+	 * @param country stato di cui si vuole cancellare l'archivio
+	 * @throws NotExistingHistoryException se lo stato non possiede un archivio
+	 */
+	@RequestMapping(value="/history/remove", method = RequestMethod.POST)
+	public ResponseEntity<Object> removeHistory(@RequestBody String country) throws NotExistingHistoryException{
+		try {
+			if(history.containsCountry(country)) {
+				history.removeHistory(country);
+				return new ResponseEntity<>("History for this country has been removed!", HttpStatus.OK);
+			}else {
+				throw new NotExistingHistoryException("History for this country doesn't exist!");
+			}
+			
+		}catch (NotExistingHistoryException n) {
+			return new ResponseEntity<>(n.getMsg(), HttpStatus.BAD_REQUEST);
 		}
 	}
 	

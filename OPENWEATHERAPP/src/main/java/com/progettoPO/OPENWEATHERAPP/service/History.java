@@ -75,6 +75,7 @@ public class History {
 	 * 
 	 * Nota: non si avrà mai la situazione in cui tale metodo venga chiamato quando l'archivio già esiste,
 	 * poichè altre parti del codice lo impediscono
+	 * 
 	 * @param country
 	 * @param lat
 	 * @param lon
@@ -99,5 +100,35 @@ public class History {
 		
 		countries_str = countries_json.toString();
 		FileUtilities.writeOnFile(path+"countries-with-history.txt", countries_str);
+	}
+	
+	/**
+	 * Metodo che cancella l'archivio storico di uno stato passato in ingresso
+	 * 
+	 * Nota: non si avrà mai la situazione in cui l'archivio dello stato passato in ingresso non
+	 * esista, poichè altre parti del codice lo impediscono
+	 * 
+	 * @param country
+	 */
+	public void removeHistory(String country) {
+		String str = FileUtilities.readFromFile(path+"countries-with-history.txt");
+		JSONArray countries_json = new JSONArray(str);
+		
+		boolean found = false;
+		
+		for(int i=0; (i<countries_json.length())&&(found==false); i++) {
+			if(countries_json.getJSONObject(i).getString("name").equals(country)) {
+				countries_json.remove(i);
+				found = true;
+			}
+		}
+		
+		str = countries_json.toString();
+		FileUtilities.writeOnFile(path+"countries-with-history.txt", str);
+		
+		list.remove(country);
+		
+	    File file = new File(path+country+".txt");
+		file.delete();
 	}
 }
