@@ -3,10 +3,9 @@ package com.progettoPO.OPENWEATHERAPP.utilities;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
-
-import javax.net.ssl.HttpsURLConnection;
 
 /**
  * <p>
@@ -27,11 +26,11 @@ public class APIUtilities {
 	 * @return la risorsa desiderata (originaria dall'url)
 	 */
 	public static String InputFromAPI(String api) {
-		HttpsURLConnection connection=null;
+		HttpURLConnection connection=null;
 		URL url;
 		try {
 			url = new URL(api);
-			connection=(HttpsURLConnection)url.openConnection();
+			connection=(HttpURLConnection)url.openConnection();
 			connection.connect();
 		} catch (MalformedURLException e) {
 			// TODO Auto-generated catch block
