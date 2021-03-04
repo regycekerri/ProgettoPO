@@ -10,6 +10,7 @@ package com.progettoPO.OPENWEATHERAPP.exception;
  * @author Vigliotta Michele
  *
  */
+@SuppressWarnings("serial")
 public class CountryNotSupportedException extends Exception {
 	
 	private String msg;

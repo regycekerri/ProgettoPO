@@ -1,8 +1,5 @@
 package com.progettoPO.OPENWEATHERAPP.controller;
 
-import java.io.File;
-import java.io.IOException;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -17,7 +14,6 @@ import com.progettoPO.OPENWEATHERAPP.exception.CountryNotSupportedException;
 import com.progettoPO.OPENWEATHERAPP.service.History;
 import com.progettoPO.OPENWEATHERAPP.service.ListOfCountries;
 import com.progettoPO.OPENWEATHERAPP.service.WeatherServiceImpl;
-import com.progettoPO.OPENWEATHERAPP.utilities.FileUtilities;
 
 /**
  * <p>

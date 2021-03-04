@@ -8,6 +8,8 @@ package com.progettoPO.OPENWEATHERAPP.exception;
  * @author Cekerri Regy
  * @author Vigliotta Michele
  */
+
+@SuppressWarnings("serial")
 public class AlreadyExistingHistoryException extends Exception {
 	
 	private String msg;
