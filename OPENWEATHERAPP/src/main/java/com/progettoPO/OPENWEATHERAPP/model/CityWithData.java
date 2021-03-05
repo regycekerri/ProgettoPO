@@ -8,7 +8,6 @@ package com.progettoPO.OPENWEATHERAPP.model;
  * 
  * @author Cekerri Regy
  * @author Vigliotta Michele
- *
  */
 public class CityWithData extends City {
 	
@@ -65,15 +64,5 @@ public class CityWithData extends City {
 	 */
 	public void setVisibility(int visibility) {
 		this.visibility = visibility;
-	}
-	
-	/**
-	 * Implementazione del metodo compareTo() appartenente all'interfaccia Comparable
-	 * 
-	 * Nota: per quanto riguarda questa classe, tale implementazione non sarà mai utilizzata, ma 
-	 * serve a prevenire segnalazioni di errore del compilatore
-	 */
-	public int compareTo(Object o) {
-		return 0;
 	}
 }

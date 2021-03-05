@@ -20,7 +20,6 @@ import com.progettoPO.OPENWEATHERAPP.utilities.JSONParser;
  * 
  * @author Cekerri Regy
  * @author Vigliotta Michele
- *
  */
 @Service
 public class History {
@@ -34,12 +33,12 @@ public class History {
 	public History() {
 		list = getCountriesWithHistory();
 	}
+	
 	/**
 	 * Metodo che restituisce la lista degli stati di cui si ha un archivio storico, attraverso la lettura
 	 * dal file che li contiene
 	 * 
 	 * @return lista degli stati di cui si ha un archivio storico
-	 *
 	 */
 	public ArrayList<String> getCountriesWithHistory() {
 		String input = FileUtilities.readFromFile(path+"countries-with-history.txt");

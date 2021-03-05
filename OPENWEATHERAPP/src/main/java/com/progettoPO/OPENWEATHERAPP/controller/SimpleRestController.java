@@ -25,7 +25,6 @@ import com.progettoPO.OPENWEATHERAPP.service.WeatherServiceImpl;
  * @author Cekerri Regy
  * @author Vigliotta Michele
  */
-
 @RestController
 public class SimpleRestController {
 	
@@ -47,9 +46,8 @@ public class SimpleRestController {
 	}
 	
 	/**
-	 * La seguente rotta riceve come parametri il nome dello stato (country) dal quale si vuole attingere la capitale
-	 * e il numero di città limitrofe (capitale compresa) delle quali si vogliono conoscere l'umidità e la visibilità
-	 * attuali
+	 * La seguente rotta riceve come parametri il nome dello stato (country) e un numero di città (cnt); restituisce la visibilità
+	 * e l'umidità attuali delle cnt città limitrofe alla capitale (compresa nelle cnt città)
 	 * 
 	 * @param country nome dello stato
 	 * @param cnt numero di città limitrofe
@@ -139,5 +137,4 @@ public class SimpleRestController {
 			return new ResponseEntity<>(n.getMsg(), HttpStatus.BAD_REQUEST);
 		}
 	}
-	
 }

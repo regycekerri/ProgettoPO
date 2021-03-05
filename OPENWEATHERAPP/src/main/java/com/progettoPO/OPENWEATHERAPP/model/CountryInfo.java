@@ -8,7 +8,6 @@ package com.progettoPO.OPENWEATHERAPP.model;
  * 
  * @author Cekerri Regy
  * @author Vigliotta Michele
- *
  */
 public class CountryInfo {
 	private String country_name;

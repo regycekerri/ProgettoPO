@@ -27,15 +27,26 @@ import com.progettoPO.OPENWEATHERAPP.utilities.JSONParser;
 @SpringBootApplication
 public class OpenweatherappApplication {
 
+	/** 
+	 * Main dell'applicazione
+	 * 
+	 * @param args
+	 */
 	public static void main(String[] args) {
 		SpringApplication.run(OpenweatherappApplication.class, args);
 	}
 	
+	/** 
+	 * Classe di configurazione dello scheduling
+	 */
 	@Configuration
 	@EnableScheduling
 	@ConditionalOnProperty(name = "scheduling.enabled", matchIfMissing = true)
 	class SchedulingConfiguration {}
 	
+	/**
+	 * Metodo che si occupa di aggiornare ogni 5 ore gli archivi storici degli stati
+	 */
 	@Scheduled(fixedRate = 18000000L)
 	public void updateHistory() {
 		ArrayList<String> list_to_update = new ArrayList<String>();

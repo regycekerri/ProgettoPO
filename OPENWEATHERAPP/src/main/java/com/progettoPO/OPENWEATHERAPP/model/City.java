@@ -2,15 +2,14 @@ package com.progettoPO.OPENWEATHERAPP.model;
 
 /**
  * <p>
- * <b>Classe</b> astratta caratterizzata dagli attributi fondamentali che definiscono ogni città
+ * <b>Classe</b> caratterizzata dagli attributi fondamentali che definiscono ogni città
  * [nome (name), latitudine (lat), longitudine (lon), id(city_id)]
  * </p>
  * 
  * @author Cekerri Regy
  * @author Vigliotta Michele
- *
  */
-public abstract class City implements Comparable<Object> {
+public class City {
 	
 	private String name;
 	private double lat;
