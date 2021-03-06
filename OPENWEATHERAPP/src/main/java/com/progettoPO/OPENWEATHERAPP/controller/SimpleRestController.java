@@ -3,6 +3,7 @@ package com.progettoPO.OPENWEATHERAPP.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -135,6 +136,64 @@ public class SimpleRestController {
 			
 		}catch (NotExistingHistoryException n) {
 			return new ResponseEntity<>(n.getMsg(), HttpStatus.BAD_REQUEST);
+		}
+	}
+	
+	/**
+	 * La seguente rotta prende come parametro il nome dello stato (country), il numero di città attorno alla capitale
+	 * (cnt) e il periodo in giorni sul quale effettuare le statistiche (period); viene restituita la 
+	 * lista delle città con i rispettivi indici statistici sull'umidità ordinate secondo quanto espresso
+	 * dal parametro che stabilisce la modalità di ordinamento (order)
+	 * 
+	 * @param order modalità di ordinamento
+	 * @param period periodo in giorni sul quale effettuare statistiche
+	 * @param country nome dello stato
+	 * @param cnt numero di città limitrofe
+	 * @return la lista ordinata delle città, ciascuna con i propri indici statistici sull'umidità
+	 */
+	@RequestMapping(value="/stats/humidity/{order}/{period}", method = RequestMethod.GET)
+	public ResponseEntity<Object> statsHumidity(@PathVariable("order") String order, @PathVariable("period") int period, @RequestParam(name = "country") String country, @RequestParam(name = "cnt") int cnt) throws NotExistingHistoryException{
+		try {
+			if(history.containsCountry(country)) {
+				return new ResponseEntity<>(service.statsHumidityService(country, order, cnt, period), HttpStatus.OK);
+			}else {
+				throw new NotExistingHistoryException("History for this country doesn't exist!");
+			}
+			
+		}catch (NotExistingHistoryException n) {
+			return new ResponseEntity<>(n.getMsg(), HttpStatus.BAD_REQUEST);
+			
+		}catch (IllegalArgumentException i) {
+			return new ResponseEntity<>(i.getMessage(), HttpStatus.BAD_REQUEST);
+		}
+	}
+	
+	/**
+	 * La seguente rotta prende come parametro il nome dello stato (country), il numero di città attorno alla capitale
+	 * (cnt) e il periodo in giorni sul quale effettuare le statistiche (period); viene restituita la 
+	 * lista delle città con i rispettivi indici statistici sulla visibilità ordinate secondo quanto espresso
+	 * dal parametro che stabilisce la modalità di ordinamento (order)
+	 * 
+	 * @param order modalità di ordinamento
+	 * @param period periodo in giorni sul quale effettuare statistiche
+	 * @param country nome dello stato
+	 * @param cnt numero di città limitrofe
+	 * @return la lista ordinata delle città, ciascuna con i propri indici statistici sulla visibilità
+	 */
+	@RequestMapping(value="/stats/visibility/{order}/{period}", method = RequestMethod.GET)
+	public ResponseEntity<Object> statsVisibility(@PathVariable("order") String order, @PathVariable("period") int period, @RequestParam(name = "country") String country, @RequestParam(name = "cnt") int cnt) throws NotExistingHistoryException{
+		try {
+			if(history.containsCountry(country)) {
+				return new ResponseEntity<>(service.statsVisibilityService(country, order, cnt, period), HttpStatus.OK);
+			}else {
+				throw new NotExistingHistoryException("History for this country doesn't exist!");
+			}
+			
+		}catch (NotExistingHistoryException n) {
+			return new ResponseEntity<>(n.getMsg(), HttpStatus.BAD_REQUEST);
+			
+		}catch (IllegalArgumentException i) {
+			return new ResponseEntity<>(i.getMessage(), HttpStatus.BAD_REQUEST);
 		}
 	}
 }

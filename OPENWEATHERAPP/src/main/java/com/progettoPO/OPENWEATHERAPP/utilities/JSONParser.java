@@ -1,10 +1,13 @@
 package com.progettoPO.OPENWEATHERAPP.utilities;
 
+import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+import com.progettoPO.OPENWEATHERAPP.model.CityStats;
 import com.progettoPO.OPENWEATHERAPP.model.CityWithData;
 
 /**
@@ -112,6 +115,122 @@ public class JSONParser {
 		}
 		
 		return json_arr;
+	}
+	
+	/**
+	 * Metodo che, dato un JSONArray contenente dei dati storici, genera una lista di città con i 
+	 * corrispettivi indici statistici riguardanti l'umidità, filtrati nel numero di città (cnt) e 
+	 * nel periodo di tempo (period)
+	 * 
+	 * @param jsonArray JSONArray contenente i dati storici
+	 * @param cnt numero di città per il quale si richiedono le statistiche
+	 * @param period periodo temporale in giorni sul quale effettuare statistiche
+	 * @return lista di città con i corrispettivi indici statistici riguardanti l'umidità
+	 */
+	public static ArrayList<CityStats> setHumidityStatsFromJSONArray(JSONArray jsonArray, int cnt, int period) {
+		ArrayList<CityStats> array = new ArrayList<CityStats>();
+		ArrayList<Integer> humidities;
+		
+		JSONObject city;
+		JSONArray city_data;
+		JSONObject single_city_data;
+		
+		String name;
+		double lat;
+		double lon;
+		int min;
+		int max;
+		double avg;
+		double var;
+		LocalDate date;
+		
+		for(int i=0; i<cnt; i++) {
+			city = jsonArray.getJSONObject(i);
+			city_data = city.getJSONArray("data");
+			
+			humidities = new ArrayList<Integer>();
+			
+			name = city.getString("name");
+			lat = city.getDouble("lat");
+			lon = city.getDouble("lon");
+			
+			for(int j=0; j<city_data.length(); j++) {
+				single_city_data = city_data.getJSONObject(j);
+				
+				date = LocalDate.parse(single_city_data.getString("date"));
+				
+				if(date.until(LocalDate.now(), ChronoUnit.DAYS)<period) {
+					humidities.add(single_city_data.getInt("humidity"));
+				}
+			}
+			
+			min = Statistics.getMin(humidities);
+		    max = Statistics.getMax(humidities);
+		    avg = Statistics.getAvg(humidities);
+		    var = Statistics.getVar(humidities);
+		    
+		    array.add(new CityStats(name, lat, lon, "humidity", min, max, avg, var));
+		}
+		
+		return array;
+	}
+	
+	/**
+	 * Metodo che, dato un JSONArray contenente dei dati storici, genera una lista di città con i 
+	 * corrispettivi indici statistici riguardanti la visibilità, filtrati nel numero di città (cnt) e 
+	 * nel periodo di tempo (period)
+	 * 
+	 * @param jsonArray JSONArray contenente i dati storici
+	 * @param cnt numero di città per il quale si richiedono le statistiche
+	 * @param period periodo temporale in giorni sul quale effettuare statistiche
+	 * @return lista di città con i corrispettivi indici statistici riguardanti la visibilità
+	 */
+	public static ArrayList<CityStats> setVisibilityStatsFromJSONArray(JSONArray jsonArray, int cnt, int period) {
+		ArrayList<CityStats> array = new ArrayList<CityStats>();
+		ArrayList<Integer> visibilities;
+		
+		JSONObject city;
+		JSONArray city_data;
+		JSONObject single_city_data;
+		
+		String name;
+		double lat;
+		double lon;
+		int min;
+		int max;
+		double avg;
+		double var;
+		LocalDate date;
+		
+		for(int i=0; i<cnt; i++) {
+			city = jsonArray.getJSONObject(i);
+			city_data = city.getJSONArray("data");
+			
+			visibilities = new ArrayList<Integer>();
+			
+			name = city.getString("name");
+			lat = city.getDouble("lat");
+			lon = city.getDouble("lon");
+			
+			for(int j=0; j<city_data.length(); j++) {
+				single_city_data = city_data.getJSONObject(j);
+				
+				date = LocalDate.parse(single_city_data.getString("date"));
+				
+				if(date.until(LocalDate.now(), ChronoUnit.DAYS)<period) {
+					visibilities.add(single_city_data.getInt("visibility"));
+				}
+			}
+			
+			min = Statistics.getMin(visibilities);
+		    max = Statistics.getMax(visibilities);
+		    avg = Statistics.getAvg(visibilities);
+		    var = Statistics.getVar(visibilities);
+		    
+		    array.add(new CityStats(name, lat, lon, "visibility", min, max, avg, var));
+		}
+		
+		return array;
 	}
 }
 
