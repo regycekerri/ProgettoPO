@@ -150,6 +150,7 @@ public class SimpleRestController {
 	 * @param country nome dello stato
 	 * @param cnt numero di città limitrofe
 	 * @return la lista ordinata delle città, ciascuna con i propri indici statistici sull'umidità
+	 * @throws NotExistingHistoryException se lo stato non possiede un archivio
 	 */
 	@RequestMapping(value="/stats/humidity/{order}/{period}", method = RequestMethod.GET)
 	public ResponseEntity<Object> statsHumidity(@PathVariable("order") String order, @PathVariable("period") int period, @RequestParam(name = "country") String country, @RequestParam(name = "cnt") int cnt) throws NotExistingHistoryException{
@@ -179,6 +180,7 @@ public class SimpleRestController {
 	 * @param country nome dello stato
 	 * @param cnt numero di città limitrofe
 	 * @return la lista ordinata delle città, ciascuna con i propri indici statistici sulla visibilità
+	 * @throws NotExistingHistoryException se lo stato non possiede un archivio
 	 */
 	@RequestMapping(value="/stats/visibility/{order}/{period}", method = RequestMethod.GET)
 	public ResponseEntity<Object> statsVisibility(@PathVariable("order") String order, @PathVariable("period") int period, @RequestParam(name = "country") String country, @RequestParam(name = "cnt") int cnt) throws NotExistingHistoryException{

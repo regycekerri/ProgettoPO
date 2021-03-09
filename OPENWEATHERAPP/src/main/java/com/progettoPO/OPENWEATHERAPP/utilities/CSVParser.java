@@ -19,13 +19,13 @@ public class CSVParser {
 	
 	/**
 	 * Metodo che riceve come parametro il nome del file che dovrà essere parsato come vettore di oggetti
-	 * del tipo "CountryInfo"
+	 * del tipo CountryInfo
 	 * 
 	 * Nota: il metodo è volutamente non permissivo, infatti genera un eccezione se il file passato non è esattamente
 	 * quello per cui è stato concepito ("src/main/resources/country-capitals.txt")
 	 * 
 	 * @param file nome del file
-	 * @return vettore contenente gli oggetti di tipo "CountryInfo"
+	 * @return vettore contenente gli oggetti di tipo CountryInfo
 	 * @throws IllegalArgumentException se il nome del file non coincide con "src/main/resources/country-capitals.txt"
 	 */
 	public static CountryInfo[] CSVParserCountries(String file) throws IllegalArgumentException {

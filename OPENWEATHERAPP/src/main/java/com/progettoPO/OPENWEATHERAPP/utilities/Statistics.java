@@ -3,6 +3,15 @@ package com.progettoPO.OPENWEATHERAPP.utilities;
 import java.util.ArrayList;
 import java.util.Collections;
 
+/**
+ * <p>
+ * <b>Classe</b> che contiene dei metodi utili ad effettuare dei calcoli statistici
+ * </p>
+ * 
+ * @author Cekerri Regy
+ * @author Vigliotta Michele
+ *
+ */
 public class Statistics {
 	
 	/**

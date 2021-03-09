@@ -15,7 +15,7 @@ import com.progettoPO.OPENWEATHERAPP.utilities.JSONParser;
 /**
  * <p>
  * <b>Classe</b> che contiene dei metodi necessari a gestire gli archivi storici degli stati e strutture
- * dati contenenti informazioni rigurdanti essi
+ * dati contenenti informazioni riguardanti essi
  * </p>
  * 
  * @author Cekerri Regy
@@ -75,9 +75,9 @@ public class History {
 	 * Nota: non si avrà mai la situazione in cui tale metodo venga chiamato quando l'archivio già esiste,
 	 * poichè altre parti del codice lo impediscono
 	 * 
-	 * @param country
-	 * @param lat
-	 * @param lon
+	 * @param country nome dello stato
+	 * @param lat latitudine della capitale dello stato
+	 * @param lon longitudine della capitale dello stato
 	 */
 	public void createHistory(String country, double lat, double lon) {
 		ArrayList<CityWithData> array = WeatherAPI.getHumidityAndVisibility(lat, lon, 50);
@@ -107,7 +107,7 @@ public class History {
 	 * Nota: non si avrà mai la situazione in cui l'archivio dello stato passato in ingresso non
 	 * esista, poichè altre parti del codice lo impediscono
 	 * 
-	 * @param country
+	 * @param country nome dello stato
 	 */
 	public void removeHistory(String country) {
 		String str = FileUtilities.readFromFile(path+"countries-with-history.txt");

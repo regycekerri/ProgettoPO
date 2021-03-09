@@ -97,7 +97,7 @@ public class City {
 	/**
 	 * Metodo che imposta l'id della città
 	 * 
-	 * @param city_id
+	 * @param city_id id della città
 	 */
 	public void setCity_id(int city_id) {
 		this.city_id = city_id;

@@ -41,7 +41,7 @@ public interface WeatherService {
 	
 	/**
 	 * Metodo che restituisce la lista delle città con le loro rispettive statistiche riguardanti 
-	 * la visibilità richieste dalla rotta "/stats/humidity/{order}/{period}"
+	 * la visibilità richieste dalla rotta "/stats/visibility/{order}/{period}"
 	 * 
 	 * @param country stato dal quale attingere i dati sulle città
 	 * @param order modalità di ordinamento delle città
