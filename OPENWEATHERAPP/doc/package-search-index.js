@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"com.progettoPO.OPENWEATHERAPP"},{"l":"com.progettoPO.OPENWEATHERAPP.controller"},{"l":"com.progettoPO.OPENWEATHERAPP.exception"},{"l":"com.progettoPO.OPENWEATHERAPP.model"},{"l":"com.progettoPO.OPENWEATHERAPP.service"},{"l":"com.progettoPO.OPENWEATHERAPP.utilities"}];updateSearchResults();
