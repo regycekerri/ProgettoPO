@@ -24,8 +24,8 @@ class JSONParserTest {
 
 	private String string;
 	private JSONArray array;
-	ArrayList<CityStats> array1;
-	ArrayList<CityStats> array2;
+	private ArrayList<CityStats> array1;
+	private ArrayList<CityStats> array2;
 	
 	/**
 	 * Metodo che inizializza tutto ciò che serve per testare i metodi
@@ -62,7 +62,7 @@ class JSONParserTest {
 		assertEquals("Pigna", array2.get(0).getName());
 		assertTrue(array2.get(0).getMin()<=array2.get(0).getMax());
 		assertTrue(array2.get(0).getAvg()!=0);
-		assertTrue(array2.get(0).getVar()!=0);
+		assertTrue(array2.get(0).getVar()==0);
 	}
 
 }

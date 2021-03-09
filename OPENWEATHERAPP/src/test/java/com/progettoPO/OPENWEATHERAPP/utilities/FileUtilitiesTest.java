@@ -28,7 +28,7 @@ class FileUtilitiesTest {
 	@BeforeEach
 	void setUp() throws Exception {
 		file = "src/main/resources/tests/test.txt";
-		msg = "test";
+		msg = "test\n";
 	}
 
 	/**
@@ -41,12 +41,11 @@ class FileUtilitiesTest {
 	}
 
 	/**
-	 * Metodo che testa il corretto funzionamento dei metodi readFromFile() e writeOnFile()
+	 * Metodo che testa il corretto funzionamento del metodo readFromFile()
 	 */
 	@Test
 	void testFileUtilities() {
-		FileUtilities.writeOnFile(file, msg);
-		assertEquals("test", FileUtilities.readFromFile(file));
+		assertTrue(FileUtilities.readFromFile(file).equals(msg));
 	}
 
 }

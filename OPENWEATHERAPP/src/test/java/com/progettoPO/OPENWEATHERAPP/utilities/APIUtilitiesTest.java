@@ -2,8 +2,6 @@ package com.progettoPO.OPENWEATHERAPP.utilities;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-import java.net.MalformedURLException;
-
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -28,8 +26,8 @@ class APIUtilitiesTest {
 	 */
 	@BeforeEach
 	void setUp() throws Exception {
-		malformedURL = "http://NotExisting";
-		wellformedURL = "https://api.openweathermap.org/data/2.5/weather?lat=15&lon=10&appid="+FileUtilities.readFromFile("scr/main/resources/APIkey.txt");
+		malformedURL = "abc";
+		wellformedURL = "https://api.openweathermap.org/data/2.5/weather?lat=15&lon=10&appid="+FileUtilities.readFromFile("src/main/resources/APIkey.txt");
 	}
 
 	/**
@@ -46,7 +44,7 @@ class APIUtilitiesTest {
 	 */
 	@Test
 	void testInputFromAPI() {
-		assertThrows(MalformedURLException.class, ()->APIUtilities.InputFromAPI(malformedURL));
+		assertThrows(NullPointerException.class,()->APIUtilities.InputFromAPI(malformedURL));
 		
 		assertNotNull(APIUtilities.InputFromAPI(wellformedURL));
 	}

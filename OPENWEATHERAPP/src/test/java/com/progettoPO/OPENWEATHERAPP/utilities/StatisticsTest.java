@@ -51,7 +51,7 @@ class StatisticsTest {
 		assertEquals(2, Statistics.getMin(numbers));
 		assertEquals(6, Statistics.getMax(numbers));
 		assertEquals(4, Statistics.getAvg(numbers));
-		assertEquals(8/3, Statistics.getVar(numbers));
+		assertEquals((double)8/3, Statistics.getVar(numbers));
 	}
 
 }

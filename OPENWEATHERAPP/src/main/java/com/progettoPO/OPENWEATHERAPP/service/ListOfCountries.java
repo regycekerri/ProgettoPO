@@ -8,7 +8,7 @@ import com.progettoPO.OPENWEATHERAPP.utilities.FileUtilities;
 
 /**
  * <p>
- * <b>Classe contenente dei metodi che creano e gestiscono la lista degli stati supportati dall'applicativo
+ * <b>Classe</b> contenente dei metodi che creano e gestiscono la lista degli stati supportati dall'applicativo
  * </p>
  * 
  * @author Cekerri Regy
