@@ -42,7 +42,7 @@ class WeatherServiceImplTest {
 	 */
 	@Test
 	void testStatsHumidityService() {
-		IllegalArgumentException i1 = assertThrows(IllegalArgumentException.class, ()->service.statsHumidityService("Italy", "abc", 20, 1));
+		IllegalArgumentException i1 = assertThrows(IllegalArgumentException.class, ()->service.statsHumidityService("Italy", "abc", 20, 30));
 		assertEquals("Invalid order (order must equal: [min, max, avg, var]", i1.getMessage());
 	}
 	
@@ -51,7 +51,7 @@ class WeatherServiceImplTest {
 	 */
 	@Test
 	void testStatsVisibilityService() {
-		IllegalArgumentException i2 = assertThrows(IllegalArgumentException.class, ()->service.statsVisibilityService("Italy", "abc", 20, 1));
+		IllegalArgumentException i2 = assertThrows(IllegalArgumentException.class, ()->service.statsVisibilityService("Italy", "abc", 20, 30));
 		assertEquals("Invalid order (order must equal: [min, max, avg, var]", i2.getMessage());
 	}
 
