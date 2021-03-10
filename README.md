@@ -30,7 +30,7 @@ Un modo efficace per schematizzare la struttura dell'applicazione è ricorrere a
 
 * <i>com.progettoPO.OPENWEATHERAPP.controller</i>
 
-![alt text](https://github.com/regycekerri/ProgettoPO/blob/master/UML/com.progettoPO.OPENWEATHERAPP.controller)
+![alt text](https://github.com/regycekerri/ProgettoPO/blob/master/UML/com.progettoPO.OPENWEATHERAPP.controller.png)
 
 * <i>com.progettoPO.OPENWEATHERAPP.exception</i>
 
@@ -39,4 +39,20 @@ Un modo efficace per schematizzare la struttura dell'applicazione è ricorrere a
 * <i>com.progettoPO.OPENWEATHERAPP.model</i>
 
 ![alt text](https://github.com/regycekerri/ProgettoPO/blob/master/UML/com.progettoPO.OPENWEATHERAPP.model.png)
+
+* <i>com.progettoPO.OPENWEATHERAPP.service</i>
+
+![alt text](https://github.com/regycekerri/ProgettoPO/blob/master/UML/com.progettoPO.OPENWEATHERAPP.service.png)
+
+* <i>com.progettoPO.OPENWEATHERAPP.utilities</i>
+
+![alt text](https://github.com/regycekerri/ProgettoPO/blob/master/UML/com.progettoPO.OPENWEATHERAPP.utilities.png)
+
+
+
+Per quanto riguarda invece i diagrammi delle classi dei test:
+
+![alt text](https://github.com/regycekerri/ProgettoPO/blob/master/UML/test.png)
+
+## Guida all'utilizzo
 
