@@ -32,3 +32,11 @@ Un modo efficace per schematizzare la struttura dell'applicazione è ricorrere a
 
 ![alt text](https://github.com/regycekerri/ProgettoPO/blob/master/UML/com.progettoPO.OPENWEATHERAPP.controller)
 
+* <i>com.progettoPO.OPENWEATHERAPP.exception</i>
+
+![alt text](https://github.com/regycekerri/ProgettoPO/blob/master/UML/com.progettoPO.OPENWEATHERAPP.exception.png)
+
+* <i>com.progettoPO.OPENWEATHERAPP.model</i>
+
+![alt text](https://github.com/regycekerri/ProgettoPO/blob/master/UML/com.progettoPO.OPENWEATHERAPP.model.png)
+
