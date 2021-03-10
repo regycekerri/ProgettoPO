@@ -24,4 +24,6 @@ Nel caso di non validità della chiave occorrerà sostituirla con una nuova, ott
 
 Un modo efficace per schematizzare la struttura dell'applicazione è ricorrere ai diagrammi delle classi, suddivisi nei vari packages e riportati di seguito:
 
-* <i>          </i>
+* <i>com.progettoPO.OPENWEATHERAPP</i>
+
+![alt text](https://github.com/regycekerri/ProgettoPO/blob/master/UML/com.progettoPO.OPENWEATHERAPP.png)
