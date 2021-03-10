@@ -27,3 +27,8 @@ Un modo efficace per schematizzare la struttura dell'applicazione è ricorrere a
 * <i>com.progettoPO.OPENWEATHERAPP</i>
 
 ![alt text](https://github.com/regycekerri/ProgettoPO/blob/master/UML/com.progettoPO.OPENWEATHERAPP.png)
+
+* <i>com.progettoPO.OPENWEATHERAPP.controller</i>
+
+![alt text](https://github.com/regycekerri/ProgettoPO/blob/master/UML/com.progettoPO.OPENWEATHERAPP.controller)
+
