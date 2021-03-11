@@ -157,7 +157,8 @@ Nel caso in cui i vincoli non vengano rispettati verranno lanciate delle eccezio
 * ```This country is not supported```
 * ```History for this country is already available```
 
-Nel caso in cui invece i vincoli vengano rispettati verrà creato un nuovo file(<i>(nome dello stato).txt</i>) contenente l'archivio, all'interno della cartella <i>src/main/resources/history</i>. Inoltre verrà ovviamente aggiornata anche la lista degli stati che possiedono un archivio storico.
+Nel caso in cui invece i vincoli vengano rispettati verrà creato un nuovo file(<i>(nome dello stato).txt</i>) contenente l'archivio, all'interno della cartella <i>src/main/resources/history</i>. Inoltre verrà ovviamente aggiornata anche la lista degli stati che possiedono un archivio storico. L'utente infine riceverà il seguente messaggio di conferma:
+*```History for this country has been created!```
 
 Di seguito è riportato, a scopo illustrativo, il diagramma di sequenza corrispondente a questa rotta:
 
@@ -168,15 +169,20 @@ Di seguito è riportato, a scopo illustrativo, il diagramma di sequenza corrispo
 Tipo | Rotta |
 ---- | ----- |
 POST | localhost:8080/history/remove |
- 
- 
- 
- 
- 
- 
- 
- 
- 
+
+La seguente rotta permette all'utente di cancellare l'archivio storico di uno stato, attraverso l'inserimento di un <b>```RequestBody```</b> di tipo stringa, contenente il nome
+dello stato. In questo caso va rispettato il seguente vincolo:
+* lo stato deve possedere l'archivio storico
+
+Nel caso in cui il vincolo non venga rispettato verrà lanciata un'eccezione e si avrà in risposta il seguente messaggio:
+*```History for this country doesn't exist!```
+
+Nel caso in cui invece il vincolo venga rispettato verrà cancellato il file corrispondente all'archivio storico. Inoltre verrà ovviamente aggiornata anche la lista degli stati che possiedono un archivio storico. L'utente infine riceverà il seguente messaggio di conferma:
+*```History for this country has been removed!```
+
+Di seguito è riportato, a scopo illustrativo, il diagramma di sequenza corrispondente a questa rotta:
+
+![alt text]
  
  #### #6
 
