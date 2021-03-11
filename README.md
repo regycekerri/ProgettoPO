@@ -5,7 +5,7 @@
 L'applicazione è scaricabile in uno dei seguenti modi:
 * dal Prompt dei Comandi digitando:  <i> git clone https://github.com/regycekerri/ProgettoPO.git </i>
 * clonandola da Eclipse attraverso il link precedente
-* sottoforma di cartella compressa cliccando su <i>code</i> (di colore verde in alto a destra sulla pagina   corrente)
+* sotto forma di cartella compressa cliccando su <i>code</i> (di colore verde in alto a destra sulla pagina   corrente)
 
 ## Introduzione
  
@@ -64,3 +64,12 @@ In entrambi i casi, ciò che verrà fatto dall'applicazione sarà avviare un ser
 
 Di seguito saranno fornite le spiegazioni dettagliate sul funzionamento di ciascuna rotta.
 
+#### #1
+
+Tipo | Rotta | 
+---- | ---- | 
+GET | localhost:8080/countries" |
+
+La seguente rotta restituisce semplicemente la lista degli stati supportati dall'applicazione, sotto forma di tabella HTML. Proprio per tale motivo è altamente raccomandato l'utilizzo di un browser, poichè in grado di generare la tabella nel modo corretto, a partire dal linguaggio HTML.
+
+Di seguito è riportato, a scopo illustrativo, il diagramma di sequenza corrispondente a questa rotta:
