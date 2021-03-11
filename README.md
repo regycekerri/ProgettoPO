@@ -68,7 +68,7 @@ Di seguito saranno fornite le spiegazioni dettagliate sul funzionamento di ciasc
 
 Tipo | Rotta | 
 ---- | ----- | 
-GET | localhost:8080/countries" |
+GET | localhost:8080/countries |
 
 La seguente rotta restituisce semplicemente la lista degli stati supportati dall'applicazione, sotto forma di tabella HTML. Proprio per tale motivo è altamente raccomandato l'utilizzo di un browser, poichè in grado di generare la tabella nel modo corretto, a partire dal linguaggio HTML.
 
@@ -127,3 +127,16 @@ Di seguito è riportato, a scopo illustrativo, il diagramma di sequenza corrispo
 
 
 
+
+
+
+
+#### #3
+
+Tipo | Rotta |
+---- | ----- |
+GET | localhost:8080/history |
+
+La seguente rotta restituisce la lista degli stati che hanno un archivio storico
+
+Di seguito è riportato, a scopo illustrativo, il diagramma di sequenza corrispondente a questa rotta:
