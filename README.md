@@ -84,5 +84,46 @@ GET | localhost:8080/actualdata?country={country}&cnt={cnt}
 
 La seguente rotta richiede, come è possibile constatare, i seguenti parametri:
 * <b>```country```</b> : nome dello stato
-* <b>```cnt```</b> : numero di città circostanti alla capitale (compresa)
+* <b>```cnt```</b> : numero di città circostanti la capitale (compresa)
+
+con i seguenti vincoli:
+* il nome dello stato deve appartenere alla lista degli stati supportati dall'applicazione
+* il numero di città circostanti la capitale (compresa) deve appartenere al seguente range [1-50]
+
+In caso in cui i vincoli non vengano rispettati verranno lanciate delle eccezioni e si avranno in risposta i seguenti messaggi:
+* ```This country is not supported```
+* ```Invalid number of cities (cnt must belong to this range: [1,50])```
+
+Nel caso in cui i vincoli vengano invece rispettati la risposta ottenuta sarà una lista di città con i corrispettivi valori di umidità e visibilità attuali.
+
+Di seguito è riportato un esempio di chiamata e relativa risposta:
+* <i>localhost:8080/actualdata?country=Italy&cnt=2</i>
+
+```
+[
+    {
+        "name": "Pigna",
+        "lat": 41.8964,
+        "lon": 12.4846,
+        "city_id": 6545151,
+        "humidity": 58,
+        "visibility": 10000
+    },
+    {
+        "name": "Rome",
+        "lat": 41.8947,
+        "lon": 12.4839,
+        "city_id": 3169070,
+        "humidity": 58,
+        "visibility": 10000
+    }
+]
+```
+
+Di seguito è riportato, a scopo illustrativo, il diagramma di sequenza corrispondente a questa rotta:
+
+
+
+
+
 
