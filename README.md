@@ -133,3 +133,59 @@ GET | localhost:8080/history |
 La seguente rotta restituisce la lista degli stati che hanno un archivio storico
 
 Di seguito è riportato, a scopo illustrativo, il diagramma di sequenza corrispondente a questa rotta:
+
+
+
+
+
+
+
+#### #4
+
+Tipo | Rotta |
+---- | ----- |
+ | localhost:8080 |
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ #### #5
+
+Tipo | Rotta |
+---- | ----- |
+ | localhost:8080 |
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ #### #6
+
+Tipo | Rotta |
+---- | ----- |
+ | localhost:8080 |
+
+
+
+
+
+
+
+#### #7
+
+Tipo | Rotta |
+---- | ----- |
+ | localhost:8080 |
+
+
