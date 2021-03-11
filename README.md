@@ -67,9 +67,22 @@ Di seguito saranno fornite le spiegazioni dettagliate sul funzionamento di ciasc
 #### #1
 
 Tipo | Rotta | 
----- | ---- | 
+---- | ----- | 
 GET | localhost:8080/countries" |
 
 La seguente rotta restituisce semplicemente la lista degli stati supportati dall'applicazione, sotto forma di tabella HTML. Proprio per tale motivo è altamente raccomandato l'utilizzo di un browser, poichè in grado di generare la tabella nel modo corretto, a partire dal linguaggio HTML.
 
 Di seguito è riportato, a scopo illustrativo, il diagramma di sequenza corrispondente a questa rotta:
+
+![alt text](https://github.com/regycekerri/ProgettoPO/blob/master/UML/rotta1.png)
+
+#### #2
+
+Tipo | Rotta |
+---- | ----- |
+GET | localhost:8080/actualdata?country={country}&cnt={cnt}
+
+La seguente rotta richiede, come è possibile constatare, i seguenti parametri:
+* ```<b>country</b>``` : nome dello stato
+* ```<b>cnt</b>``` : numero di città circostanti alla capitale (compresa)
+
