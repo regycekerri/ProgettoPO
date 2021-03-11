@@ -161,6 +161,8 @@ Nel caso in cui invece i vincoli vengano rispettati verrà creato un nuovo file(
 
 Di seguito è riportato, a scopo illustrativo, il diagramma di sequenza corrispondente a questa rotta:
 
+![alt text](https://github.com/regycekerri/ProgettoPO/blob/master/UML/rotta4.png)
+
  #### #5
 
 Tipo | Rotta |
