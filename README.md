@@ -122,7 +122,7 @@ Di seguito è riportato un esempio di chiamata e relativa risposta:
 
 Di seguito è riportato, a scopo illustrativo, il diagramma di sequenza corrispondente a questa rotta:
 
-![alt text](https://github.com/regycekerri/ProgettoPO/blob/master/UML/rotta2.png)
+![alt text]
 
 #### #3
 
