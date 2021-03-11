@@ -130,8 +130,15 @@ Tipo | Rotta |
 ---- | ----- |
 GET | localhost:8080/history |
 
-La seguente rotta restituisce la lista degli stati che hanno un archivio storico
+La seguente rotta restituisce la lista degli stati che possiedono un archivio storico, tratta dal file <i>src/main/resources/history/countries-with-history</i>.
 
+Se ad esempio viene richiamata tale rotta nel caso in cui l'unico stato che possiede un archivio storico sia l'Italia, si avrà una risposta del seguente tipo:
+
+```
+[
+    "Italy"
+]
+```
 Di seguito è riportato, a scopo illustrativo, il diagramma di sequenza corrispondente a questa rotta:
 
 
