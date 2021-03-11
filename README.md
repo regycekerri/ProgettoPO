@@ -165,7 +165,7 @@ Di seguito è riportato, a scopo illustrativo, il diagramma di sequenza corrispo
 
 Tipo | Rotta |
 ---- | ----- |
- | localhost:8080 |
+POST | localhost:8080/history/delete |
  
  
  
