@@ -139,7 +139,6 @@ Di seguito è riportato, a scopo illustrativo, il diagramma di sequenza corrispo
 
 
 
-
 #### #4
 
 Tipo | Rotta |
