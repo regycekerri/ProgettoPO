@@ -80,7 +80,7 @@ Di seguito è riportato, a scopo illustrativo, il diagramma di sequenza corrispo
 
 Tipo | Rotta |
 ---- | ----- |
-GET | localhost:8080/actualdata?country={country}&cnt={cnt}
+GET | localhost:8080/actualdata?country={country}&cnt={cnt} |
 
 La seguente rotta richiede, come è possibile constatare, i seguenti parametri:
 * <b>```country```</b> : nome dello stato
@@ -90,11 +90,11 @@ con i seguenti vincoli:
 * il nome dello stato deve appartenere alla lista degli stati supportati dall'applicazione
 * il numero di città circostanti la capitale (compresa) deve appartenere al seguente range [1-50]
 
-In caso in cui i vincoli non vengano rispettati verranno lanciate delle eccezioni e si avranno in risposta i seguenti messaggi:
+Nel caso in cui i vincoli non vengano rispettati verranno lanciate delle eccezioni e si avranno in risposta i seguenti messaggi:
 * ```This country is not supported```
 * ```Invalid number of cities (cnt must belong to this range: [1,50])```
 
-Nel caso in cui i vincoli vengano invece rispettati la risposta ottenuta sarà una lista di città con i corrispettivi valori di umidità e visibilità attuali.
+Nel caso in cui i vincoli vengano invece rispettati la risposta ottenuta sarà una lista di città circostanti la capitale (compresa) con i corrispettivi valori di umidità e visibilità attuali.
 
 Di seguito è riportato un esempio di chiamata e relativa risposta:
 * <i>localhost:8080/actualdata?country=Italy&cnt=2</i>
@@ -141,26 +141,26 @@ Se ad esempio viene richiamata tale rotta nel caso in cui l'unico stato che poss
 ```
 Di seguito è riportato, a scopo illustrativo, il diagramma di sequenza corrispondente a questa rotta:
 
-
-
-
-
+![alt text](https://github.com/regycekerri/ProgettoPO/blob/master/UML/rotta3.png)
 
 #### #4
 
 Tipo | Rotta |
 ---- | ----- |
- | localhost:8080 |
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
+POST | localhost:8080/history/create |
+
+La seguente rotta permette all'utente di creare l'archivio storico di uno stato, attraverso l'inserimento di un <b>```RequestBody```</b> di tipo stringa, contenente il nome dello stato. Anche in questo caso vanno rispettati dei vincoli:
+* il nome dello stato deve appartenere alla lista degli stati supportati dall'applicazione
+* lo stato non deve già possedere un archivio storico
+
+Nel caso in cui i vincoli non vengano rispettati verranno lanciate delle eccezioni e si avranno in risposta i seguenti messaggi:
+* ```This country is not supported```
+* ```History for this country is already available```
+
+Nel caso in cui invece i vincoli vengano rispettati verrà creato un nuovo file(<i>(nome dello stato).txt</i>) contenente l'archivio, all'interno della cartella <i>src/main/resources/history</i>. Inoltre verrà ovviamente aggiornata anche la lista degli stati che possiedono un archivio storico.
+
+Di seguito è riportato, a scopo illustrativo, il diagramma di sequenza corrispondente a questa rotta:
+
  #### #5
 
 Tipo | Rotta |
