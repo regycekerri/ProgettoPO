@@ -182,7 +182,7 @@ Nel caso in cui invece il vincolo venga rispettato verrà cancellato il file cor
 
 Di seguito è riportato, a scopo illustrativo, il diagramma di sequenza corrispondente a questa rotta:
 
-![alt text]
+![alt text](https://github.com/regycekerri/ProgettoPO/blob/master/UML/rotta5.png)
  
  #### #6
 
