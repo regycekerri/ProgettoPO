@@ -60,7 +60,7 @@ Una volta installata l'applicazione, per poterla utilizzare occorrerà semplicem
 * come SpringBoot Application 
 * costruendo attraverso Maven un pacchetto eseguibile di tipo <i>.jar</i>
 
-In entrambi i casi, ciò che verrà fatto dall'applicazione sarà avviare un server web di tipo Tomcat alla porta ```localhost:8080```, pronto a rispondere alle richieste dell'utente. Per effettuare le richieste è necessario richiamare le corrispettive rotte attraverso l'utilizzo di un browser o di un api-tester come Postman (altamente raccomandato).
+In entrambi i casi, ciò che verrà fatto dall'applicazione sarà avviare un server web di tipo Tomcat alla porta <b>```localhost:8080```</b>, pronto a rispondere alle richieste dell'utente. Per effettuare le richieste è necessario richiamare le corrispettive rotte attraverso l'utilizzo di un browser o di un api-tester come Postman (altamente raccomandato).
 
 Di seguito saranno fornite le spiegazioni dettagliate sul funzionamento di ciascuna rotta.
 
@@ -83,6 +83,6 @@ Tipo | Rotta |
 GET | localhost:8080/actualdata?country={country}&cnt={cnt}
 
 La seguente rotta richiede, come è possibile constatare, i seguenti parametri:
-* ```<b>country</b>``` : nome dello stato
-* ```<b>cnt</b>``` : numero di città circostanti alla capitale (compresa)
+* <b>```country```</b> : nome dello stato
+* <b>```cnt```</b> : numero di città circostanti alla capitale (compresa)
 
