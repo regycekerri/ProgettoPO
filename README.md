@@ -64,6 +64,8 @@ In entrambi i casi, ciò che verrà fatto dall'applicazione sarà avviare un ser
 
 Di seguito saranno fornite le spiegazioni dettagliate sul funzionamento di ciascuna rotta.
 
+Nota: fare attenzione all'inserimento dei parametri, poichè l'applicazione è <i>case-sensitive</i>!
+
 #### #1
 
 Tipo | Rotta | 
