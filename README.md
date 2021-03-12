@@ -141,7 +141,7 @@ Se ad esempio viene richiamata tale rotta nel caso in cui l'unico stato che poss
 ```
 Di seguito è riportato, a scopo illustrativo, il diagramma di sequenza corrispondente a questa rotta:
 
-![alt text]
+![alt text](https://github.com/regycekerri/ProgettoPO/blob/master/UML/rotta3.png)
 
 #### #4
 
