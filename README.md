@@ -188,18 +188,193 @@ Di seguito è riportato, a scopo illustrativo, il diagramma di sequenza corrispo
 
 Tipo | Rotta |
 ---- | ----- |
- | localhost:8080 |
+GET | localhost:8080/stats/humidity/{order}/{period}?country={country}&cnt={cnt} |
 
+La seguente rotta richiede, come è possibile constatare, i seguenti parametri:
+* <b>```order```</b> : modalità di ordinamento
+* <b>```period```</b> : periodo in giorni sul quale effettuare le statistiche (a partire dal giorno corrente)
+* <b>```country```</b> : nome dello stato
+* <b>```cnt```</b> : numero di città circostanti la capitale (compresa)
 
+con i seguenti vincoli:
+* la modalità di ordinamento deve coincidere con una delle seguenti quattro stringhe:
+  * ```min``` : ordinamento crescente basato sui valori di umidità minimi
+  * ```max``` : ordinamento crescente basato sui valori di umidità massimi
+  * ```avg``` : ordinamento crescente basato sui valori di umidità medi
+  * ```var``` : ordinamento crescente basato sulle varianze dei valori di umidità
+* il periodo in giorni sul quale effettuare le statistiche (a partire dal giorno corrente) deve appartenere al seguente range [1-30]
+* il nome dello stato deve appartenere alla lista degli stati che possiedono un archivio storico
+* il numero di città circostanti la capitale (compresa) deve appartenere al seguente range [1-50]
 
+Nel caso in cui i vincoli non vengano rispettati verranno lanciate delle eccezioni e si avranno in risposta i seguenti messaggi:
+* ```Invalid order (order must equal: [min, max, avg, var])```
+* ```Invalid period (period must belong to this range: [1,30])```
+* ```History for this country doesn't exist!```
+* ```Invalid number of cities (cnt must belong to this range: [1,50])```
 
+Nel caso in cui i vincoli vengano invece rispettati la risposta ottenuta sarà una lista di città circostanti la capitale (compresa), ordinata secondo la modalità specificata, con i corrispettivi valori minimi, massimi, medi e di varianza di umidità, calcolati sui dati filtrati in base al periodo specificato.
 
+Di seguito è riportato un esempio di chiamata e relativa risposta:
+* <i>localhost:8080/stats/humidity/min/5?country=Italy&cnt=5</i>
 
+```
+[
+    {
+        "name": "Rome",
+        "lat": 41.8947,
+        "lon": 12.4839,
+        "city_id": 0,
+        "par": "humidity",
+        "min": 51,
+        "max": 93,
+        "avg": 76.85714285714286,
+        "var": 233.8367346938776
+    },
+    {
+        "name": "Vatican City",
+        "lat": 41.9024,
+        "lon": 12.4533,
+        "city_id": 0,
+        "par": "humidity",
+        "min": 51,
+        "max": 93,
+        "avg": 76.28571428571429,
+        "var": 248.20408163265304
+    },
+    {
+        "name": "State of the Vatican City",
+        "lat": 41.9022,
+        "lon": 12.4533,
+        "city_id": 0,
+        "par": "humidity",
+        "min": 51,
+        "max": 93,
+        "avg": 76.85714285714286,
+        "var": 233.8367346938776
+    },
+    {
+        "name": "Pigna",
+        "lat": 41.8964,
+        "lon": 12.4846,
+        "city_id": 0,
+        "par": "humidity",
+        "min": 58,
+        "max": 93,
+        "avg": 77.28571428571429,
+        "var": 203.63265306122452
+    },
+    {
+        "name": "Trevi",
+        "lat": 41.9046,
+        "lon": 12.4918,
+        "city_id": 0,
+        "par": "humidity",
+        "min": 58,
+        "max": 93,
+        "avg": 77.28571428571429,
+        "var": 203.63265306122452
+    }
+]
+```
+
+Di seguito è riportato, a scopo illustrativo, il diagramma di sequenza corrispondente a questa rotta:
+
+![alt text]()
 
 #### #7
 
 Tipo | Rotta |
 ---- | ----- |
- | localhost:8080 |
+GET | localhost:8080/stats/visibility/{order}/{period}?country={country}&cnt={cnt} |
 
+La seguente rotta richiede, come è possibile constatare, i seguenti parametri:
+* <b>```order```</b> : modalità di ordinamento
+* <b>```period```</b> : periodo in giorni sul quale effettuare le statistiche (a partire dal giorno corrente)
+* <b>```country```</b> : nome dello stato
+* <b>```cnt```</b> : numero di città circostanti la capitale (compresa)
+
+con i seguenti vincoli:
+* la modalità di ordinamento deve coincidere con una delle seguenti quattro stringhe:
+  * ```min``` : ordinamento crescente basato sui valori di visibilità minimi
+  * ```max``` : ordinamento crescente basato sui valori di visibilità massimi
+  * ```avg``` : ordinamento crescente basato sui valori di visibilità medi
+  * ```var``` : ordinamento crescente basato sulle varianze dei valori di visibilità
+* il periodo in giorni sul quale effettuare le statistiche (a partire dal giorno corrente) deve appartenere al seguente range [1-30]
+* il nome dello stato deve appartenere alla lista degli stati che possiedono un archivio storico
+* il numero di città circostanti la capitale (compresa) deve appartenere al seguente range [1-50]
+
+Nel caso in cui i vincoli non vengano rispettati verranno lanciate delle eccezioni e si avranno in risposta i seguenti messaggi:
+* ```Invalid order (order must equal: [min, max, avg, var])```
+* ```Invalid period (period must belong to this range: [1,30])```
+* ```History for this country doesn't exist!```
+* ```Invalid number of cities (cnt must belong to this range: [1,50])```
+
+Nel caso in cui i vincoli vengano invece rispettati la risposta ottenuta sarà una lista di città circostanti la capitale (compresa), ordinata secondo la modalità specificata, con i corrispettivi valori minimi, massimi, medi e di varianza di visibilità, calcolati sui dati filtrati in base al periodo specificato.
+
+Di seguito è riportato un esempio di chiamata e relativa risposta:
+* <i>localhost:8080/stats/visibility/min/5?country=Italy&cnt=5</i>
+
+```
+[
+    {
+        "name": "Rome",
+        "lat": 41.8947,
+        "lon": 12.4839,
+        "city_id": 0,
+        "par": "visibility",
+        "min": 4000,
+        "max": 10000,
+        "avg": 7714.285714285715,
+        "var": 7061224.48979592
+    },
+    {
+        "name": "Pigna",
+        "lat": 41.8964,
+        "lon": 12.4846,
+        "city_id": 0,
+        "par": "visibility",
+        "min": 5000,
+        "max": 10000,
+        "avg": 8571.42857142857,
+        "var": 5102040.81632653
+    },
+    {
+        "name": "Trevi",
+        "lat": 41.9046,
+        "lon": 12.4918,
+        "city_id": 0,
+        "par": "visibility",
+        "min": 5000,
+        "max": 10000,
+        "avg": 8857.142857142857,
+        "var": 3551020.408163266
+    },
+    {
+        "name": "Vatican City",
+        "lat": 41.9024,
+        "lon": 12.4533,
+        "city_id": 0,
+        "par": "visibility",
+        "min": 5000,
+        "max": 10000,
+        "avg": 8571.42857142857,
+        "var": 5102040.81632653
+    },
+    {
+        "name": "State of the Vatican City",
+        "lat": 41.9022,
+        "lon": 12.4533,
+        "city_id": 0,
+        "par": "visibility",
+        "min": 5000,
+        "max": 10000,
+        "avg": 8571.42857142857,
+        "var": 5102040.81632653
+    }
+]
+```
+
+Di seguito è riportato, a scopo illustrativo, il diagramma di sequenza corrispondente a questa rotta:
+
+![alt text]()
 
