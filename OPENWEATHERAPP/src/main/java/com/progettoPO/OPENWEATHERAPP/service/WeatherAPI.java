@@ -44,7 +44,7 @@ public class WeatherAPI {
 			throw new IllegalArgumentException("Invalid longitude");
 		
 		if(cnt<1||cnt>50)
-			throw new IllegalArgumentException("Invalid number of cities (cnt must belong to this range: [1,50]");
+			throw new IllegalArgumentException("Invalid number of cities (cnt must belong to this range: [1,50])");
 		
 		ArrayList<CityWithData> array = new ArrayList<CityWithData>();
 		
@@ -84,9 +84,9 @@ public class WeatherAPI {
 	 */
 	public static ArrayList<CityStats> getHumidityStats(String country, int cnt, int period) throws IllegalArgumentException{
 		if(cnt<1 || cnt>50)
-			throw new IllegalArgumentException("Invalid number of cities (cnt must belong to this range: [1,50]");
+			throw new IllegalArgumentException("Invalid number of cities (cnt must belong to this range: [1,50])");
 		if(period<1 || period>30)
-			throw new IllegalArgumentException("Invalid period (period must belong to this range: [1,30]");
+			throw new IllegalArgumentException("Invalid period (period must belong to this range: [1,30])");
 		
 		String history = FileUtilities.readFromFile("src/main/resources/history/"+country+".txt");
 		JSONArray json_arr = new JSONArray(history);
@@ -110,9 +110,9 @@ public class WeatherAPI {
 	 */
 	public static ArrayList<CityStats> getVisibilityStats(String country, int cnt, int period) throws IllegalArgumentException{
 		if(cnt<1 || cnt>50)
-			throw new IllegalArgumentException("Invalid number of cities (cnt must belong to this range: [1,50]");
+			throw new IllegalArgumentException("Invalid number of cities (cnt must belong to this range: [1,50])");
 		if(period<1 || period>30)
-			throw new IllegalArgumentException("Invalid period (period must belong to this range: [1,30]");
+			throw new IllegalArgumentException("Invalid period (period must belong to this range: [1,30])");
 		
 		String history = FileUtilities.readFromFile("src/main/resources/history/"+country+".txt");
 		JSONArray json_arr = new JSONArray(history);

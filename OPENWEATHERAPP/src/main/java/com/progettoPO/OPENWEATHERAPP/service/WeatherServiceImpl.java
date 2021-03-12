@@ -49,7 +49,7 @@ public class WeatherServiceImpl implements WeatherService {
 			Collections.sort(array, CityStats.VarComparator);
 			return array;
 		}else {
-			throw new IllegalArgumentException("Invalid order (order must equal: [min, max, avg, var]");
+			throw new IllegalArgumentException("Invalid order (order must equal: [min, max, avg, var])");
 		}
 	}
 	
@@ -72,7 +72,7 @@ public class WeatherServiceImpl implements WeatherService {
 			Collections.sort(array, CityStats.VarComparator);
 			return array;
 		}else {
-			throw new IllegalArgumentException("Invalid order (order must equal: [min, max, avg, var]");
+			throw new IllegalArgumentException("Invalid order (order must equal: [min, max, avg, var])");
 		}
 	}
 }

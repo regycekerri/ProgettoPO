@@ -60,7 +60,7 @@ class WeatherAPITest {
 		assertEquals("Invalid longitude", i2.getMessage());
 		
 		IllegalArgumentException i3 = assertThrows(IllegalArgumentException.class, ()->WeatherAPI.getHumidityAndVisibility(15.8, 12.3, 70));
-		assertEquals("Invalid number of cities (cnt must belong to this range: [1,50]", i3.getMessage());
+		assertEquals("Invalid number of cities (cnt must belong to this range: [1,50])", i3.getMessage());
 		
 		assertEquals("London", array.get(0).getName());
 		assertEquals(51.5085, array.get(0).getLat());
@@ -74,10 +74,10 @@ class WeatherAPITest {
 	@Test
 	void testGetHumidityStats() {
 		IllegalArgumentException i1 = assertThrows(IllegalArgumentException.class, ()->WeatherAPI.getHumidityStats("Italy", 60, 1));
-		assertEquals("Invalid number of cities (cnt must belong to this range: [1,50]", i1.getMessage());
+		assertEquals("Invalid number of cities (cnt must belong to this range: [1,50])", i1.getMessage());
 		
 		IllegalArgumentException i2 = assertThrows(IllegalArgumentException.class, ()->WeatherAPI.getHumidityStats("Italy", 5, 0));
-		assertEquals("Invalid period (period must belong to this range: [1,30]", i2.getMessage());
+		assertEquals("Invalid period (period must belong to this range: [1,30])", i2.getMessage());
 	}
 	
 	/**
@@ -86,10 +86,10 @@ class WeatherAPITest {
 	@Test
 	void testGetVisibilityStats() {
 		IllegalArgumentException i1 = assertThrows(IllegalArgumentException.class, ()->WeatherAPI.getVisibilityStats("Italy", 60, 1));
-		assertEquals("Invalid number of cities (cnt must belong to this range: [1,50]", i1.getMessage());
+		assertEquals("Invalid number of cities (cnt must belong to this range: [1,50])", i1.getMessage());
 		
 		IllegalArgumentException i2 = assertThrows(IllegalArgumentException.class, ()->WeatherAPI.getVisibilityStats("Italy", 5, 0));
-		assertEquals("Invalid period (period must belong to this range: [1,30]", i2.getMessage());
+		assertEquals("Invalid period (period must belong to this range: [1,30])", i2.getMessage());
 	}
 
 }
