@@ -376,5 +376,17 @@ Di seguito è riportato un esempio di chiamata e relativa risposta:
 
 Di seguito è riportato, a scopo illustrativo, il diagramma di sequenza corrispondente a questa rotta:
 
-![alt text]()
+![alt text](https://github.com/regycekerri/ProgettoPO/blob/master/UML/rotta7.png)
 
+## Documentazione
+
+Di seguito è riportato il link alla documentazione dell'applicazione in Javadoc:
+* https://github.com/regycekerri/ProgettoPO/blob/master/OPENWEATHERAPP/doc/index.html
+
+## Crediti
+
+Di seguito sono riportati gli autori del progetto:
+* Cekerri Regy: 50%
+* Vigliotta Michele: 50%
+
+Ogni parte del progetto è stata svolta con la supervisione di entrambi.
